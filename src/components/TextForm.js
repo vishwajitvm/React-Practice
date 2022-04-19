@@ -98,7 +98,7 @@ export default function Textform(props) {
     return (
         <>
             <div className='contaner'>
-                <div className="form-group text-light">
+                <div className="form-group text-dark">
                     <label htmlFor="exampleFormControlTextarea1" className='mt-5 mb-2'> <h2> {props.heading} </h2> </label>
                     <textarea className="form-control" id="Messagearea" value={text} onChange={handleOnChangeData} rows="12"></textarea>
                 </div>
@@ -119,7 +119,7 @@ export default function Textform(props) {
 
             </div>
 
-            <div className="container text-light my-3">
+            <div className="container text-dark my-3">
                 <h1 className='text-danger'> Your Text Summery </h1>
                 <p>
                     <span className='text-danger'> {text.split(" ").length} </span> Words and <span className='text-danger'> {text.length} </span> Characters <br />

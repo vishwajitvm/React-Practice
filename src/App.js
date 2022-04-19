@@ -1,4 +1,5 @@
 import './App.css';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/TextForm';
 import Textform2 from './components/Textform2' ;
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
     <Navbar title="Bloging Page" aboutTitle="About Us"></Navbar>
+    <About />
     <div className="container">
       <Textform heading="Enter Text To View Transform"></Textform>
       {/* <Textform2 Headings="EXPERIMENT ZONE"></Textform2> */}
