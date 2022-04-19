@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Navbar title="Bloging Page" aboutTitle="About Us"></Navbar>
-    <About />
+    {/* <About /> */}
     <div className="container">
       <Textform heading="Enter Text To View Transform"></Textform>
       {/* <Textform2 Headings="EXPERIMENT ZONE"></Textform2> */}
