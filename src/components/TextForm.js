@@ -97,10 +97,10 @@ export default function Textform(props) {
     }
     return (
         <>
-            <div className='contaner'>
-                <div className="form-group text-dark">
+            <div className='contaner'  style={{color: props.mode==='dark'?'white':'#042743'}}>
+                <div className="form-group ">
                     <label htmlFor="exampleFormControlTextarea1" className='mt-5 mb-2'> <h2> {props.heading} </h2> </label>
-                    <textarea className="form-control" id="Messagearea" value={text} onChange={handleOnChangeData} rows="12"></textarea>
+                    <textarea className="form-control" id="Messagearea" value={text} onChange={handleOnChangeData} rows="12" style={{backgroundColor: props.mode==='dark'?'gray':'white' , color: props.mode==='dark'?'white':'#042743'}}></textarea>
                 </div>
 
                 <button className="btn btn-primary btn-block my-4 text-uppercase mx-3" onClick={handleUpperCaseEvent}> uppercase </button>
@@ -119,16 +119,16 @@ export default function Textform(props) {
 
             </div>
 
-            <div className="container text-dark my-3">
+            <div className="container my-3" style={{color:props.mode==='dark'?'white':'#042743'}}>
                 <h1 className='text-danger'> Your Text Summery </h1>
-                <p>
-                    <span className='text-danger'> {text.split(" ").length} </span> Words and <span className='text-danger'> {text.length} </span> Characters <br />
+                <p style={{fontSize: "25px"}}>
+                    <span className='text-danger font-weight-bolder'> {text.split(" ").length} </span> Words and <span className='text-danger'> {text.length} </span> Characters <br />
                     <span className='text-danger'>{0.008* text.split(" ").length}</span> Minutes Time to Read this by Words <br />
                     <span className='text-danger'> {0.002* text.length} </span> Minutes time to read by characters. 
                 </p>
                 <h2>Preview</h2>
                 <p>
-                    {text}
+                    {text.length>0?text:"Enter somthing to preview it here"}
                 </p>
             </div>
         </>
