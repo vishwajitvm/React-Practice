@@ -29,12 +29,21 @@ function App() {
     if(mode === 'light') {
       setMode("dark")
       document.body.style.background = '#042743' ;
-      showAlert("Dark Mode Has Been Enabled" , "success")
+      showAlert("Dark Mode Has Been Enabled" , "success") ;
+      document.title = "textUtils - Dark Mode Enabled" ;
+      //change title with timeout
+      setTimeout(() => {
+        document.title = "Vishwa is good coader" ;
+      }, 2000); // // ///
+      setTimeout(() => {
+        document.title = "Vishwa is bad coader" ;
+      }, 1500);
     }
     else{
       setMode( "light")
       document.body.style.background = 'white'
       showAlert("Light Mode Has Been Enabled" , "success")
+      document.title = "textUtils - Light Mode Enabled" ;
     }
   }
   return (
