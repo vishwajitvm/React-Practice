@@ -6,18 +6,21 @@ export default function Textform(props) {
     const handleUpperCaseEvent = () => {
         let newText = text.toUpperCase() ;
         setText(newText) ;
+        props.showAlert("Converted To Uppercase!" , "success")
     }
 
     //Lower
     const handleLowerCaseEvent = () => {
         let newText = text.toLowerCase() ;
         setText(newText) ;
+        props.showAlert("Converted To Lowercase!" , "success")
     }
 
     //clear
     const handleClearTextEvent = () => {
         let newText = '' ;
         setText(newText) ;
+        props.showAlert("All text Have been Removed Successfully" , "success")
 
     }
 
@@ -27,6 +30,8 @@ export default function Textform(props) {
         const letter = text.match(Regex) ;
         const res = letter.join('') ;
         setText(res) ;
+        props.showAlert("All Symbols Have Been Removed Successfully" , "success")
+
     }
 
     //Filert Numbers 
@@ -35,6 +40,8 @@ export default function Textform(props) {
         const letterdata = text.match(Number) ;
         const result = letterdata.join(' ') ;
         setText(result) ;
+        props.showAlert("All Numbers Are Filtered" , "success")
+
     }
 
     //speak the message
@@ -50,23 +57,28 @@ export default function Textform(props) {
         let newemail = text.match(email) ;
         let result = newemail.join(' , ') ;
         setText(result) ;
+        props.showAlert("All Email Have Been Find Successfully" , "success")
+
     }
 
     //Titlecase
-    const handleTitleCasingEvent = () => {
-         
+    const handleTitleCasingEvent = () => { 
         let words =  text.split(" ").map(word => {
             return word.charAt(0).toUpperCase()+word.slice(1);
         })
         let newText = words.join(" ");
         setText(newText);
+        props.showAlert("Text is Converted To titlecase Successfully " , "success")
+
     }
 
     //handle reversecasing
     const handleReverseCasingEvent = () => {
         Text = text.split("");
         let reverseText = Text.reverse().toString().replaceAll(",", "");
-        setText(reverseText)
+        setText(reverseText) ;
+        props.showAlert(" Text have Been Reversed Successfully" , "success")
+
     }
 
     //click to copy
@@ -75,6 +87,8 @@ export default function Textform(props) {
         text.select();
         text.setSelectionRange(0, 9999999);
         navigator.clipboard.writeText(text.value);
+        props.showAlert("All Text Is Coppyed Successfully Press CTRL + V to Past" , "success")
+
     }
 
 
@@ -82,12 +96,15 @@ export default function Textform(props) {
     const changeColor = (number) => {
         const color = ['red', 'blue', 'yellow', 'orange', 'green', 'black', 'pink', 'salmon', 'teal' , 'gold' , 'greenyellow'];
         document.getElementById('Messagearea').style.color = color[number];
+        props.showAlert(" Text Color is changed Successfully " , "success")
+
     }
 
     //Change font size 
     const changFontSize = (number) => {
         const fontsize = [100 , 200 , 300 , 400 , 500 , 600 , 700 , 800 , 900];
         document.getElementById("Messagearea").style.fontWeight = fontsize[number]
+        props.showAlert(" Font Size of text is changed Succssfully " , "success")
 
     }
 

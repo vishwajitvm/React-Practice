@@ -41,7 +41,7 @@ function App() {
 
     {/* <About /> */}
     <div className="container">
-      <Textform heading="Enter Text To View Transform" mode={mode}></Textform>
+      <Textform heading="Enter Text To View Transform" mode={mode} showAlert={showAlert} ></Textform>
     </div>
     </>
   );
