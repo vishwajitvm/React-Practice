@@ -32,12 +32,12 @@ function App() {
       showAlert("Dark Mode Has Been Enabled" , "success") ;
       document.title = "textUtils - Dark Mode Enabled" ;
       //change title with timeout
-      setTimeout(() => {
-        document.title = "Vishwa is good coader" ;
-      }, 2000); // // ///
-      setTimeout(() => {
-        document.title = "Vishwa is bad coader" ;
-      }, 1500);
+      // setTimeout(() => {
+      //   document.title = "Vishwa is good coader" ;
+      // }, 2000); // // ///
+      // setTimeout(() => {
+      //   document.title = "Vishwa is bad coader" ;
+      // }, 1500);
     }
     else{
       setMode( "light")
