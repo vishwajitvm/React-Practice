@@ -6,11 +6,12 @@ import Textform from './components/TextForm';
 import React from 'react' ;
 import Alert from './components/Alert';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
+
 
 let name = "vishwajit vm" ;
 function App() {
@@ -53,23 +54,13 @@ function App() {
   }
   return (
     <>
-    <Navbar title="Bloging Page" aboutTitle="About Us" mode={mode} toggleMode={toggleMode} />
+    <Navbar title="Bloging Page" aboutTitle="About Us" mode={mode} toggleMode={toggleMode}></Navbar>
     <Alert alert={alert} />
 
     {/* <About /> */}
-    <Router>
     <div className="container">
-      <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          
-          <Route path="/">
-          <Textform heading="Enter Text To View Transform" mode={mode} showAlert={showAlert} />
-          </Route>
-        </Switch>
+      <Textform heading="Enter Text To View Transform" mode={mode} showAlert={showAlert} ></Textform>
     </div>
-    </Router>
     </>
   );
 }
